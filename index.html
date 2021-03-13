@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="tabTitle">Cave In | </title>
+     <!--   All our dependencies (separated javascript into different files)-->
+     <script src="js/animations.js"></script>
+      <script src="js/item.js"></script>
+      <script src="js/player.js"></script>
+      <script src="js/room.js"></script>
+      <script src="js/game.js"></script>
+      <script src="js/cavein.js"></script>
+      
+
+<!--    This is how you link a css file to your web page. Allows you to do all your formatting and styling in one place-->
+    <link href="./css/theme.css" type="text/css" rel="stylesheet">
+</head>
+<body id="body">
+  <div id="wrapper">
+     <header><img src="img/title.png">
+<!--     <button type="button" id="menu">MENU</button>-->
+     </header>
+     
+     <main>
+<!--        added health and thirst for some possible character stat gui -->
+         <div id="health"></div>
+         <div id="roomTextArea">
+             <p id="roomTitle">Rooms Title</p>
+             <p id="roomDescrip">rooms description</p><br><br>
+             <p><em>What do you do?</em></p>
+             <br>
+         </div>
+         
+         <div id="thirst"></div>
+          <p id = "itemHeader">ITEMS</p><p id="itemData"></p>
+          <div id="inventory"> 
+     </div>
+     <nav>
+             <button type="button" id="choice0"  onclick=""></button>
+             <button type="button" id="choice1"  onclick=""></button>
+             <button type="button" id="choice2"  onclick=""></button>
+             <button type="button" id="choice3"  onclick=""></button>
+          
+     </nav>
+     </main> 
+     
+    
+     
+      
+   </div><!--   end of wrapper-->
+   
+
+   
+<!--script to get our game going-->
+    <script src="js/cavein.js"></script>
+</body>
+</html>
