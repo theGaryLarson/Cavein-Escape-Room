@@ -175,7 +175,10 @@ class Game {
                 //add the key to our room
                 item0 = new Item("golden key", "img/key.png", null, "A shiny key.");
                 room.isExamined = false;
+<<<<<<< HEAD
                 var items = [item0, item1];
+=======
+>>>>>>> 77dee392811f9e99bcee6b17ccedea9cf2feb5c2
                 room = new Room(roomTitle, roomDescrip,choiceDescrips, choiceLinks,items)
                 this.rooms.push(room);
 				
