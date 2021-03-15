@@ -173,10 +173,8 @@ class Game {
                     console.log("key is being used.")
                 }
                 //add the key to our room
-                item0 = new Item("golden key", "/img/key.png", null, "A shiny key.");
+                item0 = new Item("golden key", "img/key.png", null, "A shiny key.");
                 room.isExamined = false;
-                item1 = new Item("chalice","img/lint.png", null, "A worn but valuable looking goblet.")
-                var items = [item0, item1];
                 room = new Room(roomTitle, roomDescrip,choiceDescrips, choiceLinks,items)
                 this.rooms.push(room);
 				
@@ -245,7 +243,7 @@ class Game {
                 choiceLinks = [linkChoice0, linkChoice1, linkChoice2, linkChoice3]
 				
 				//here we will create a rope to swap into our player inventory when click choice1
-				item0 = new Item("rope", "/img/rope.png", null, "The means of your escape.");
+				item0 = new Item("rope", "img/rope.png", null, "The means of your escape.");
 				items=[item0];
                 room = new Room(roomTitle, roomDescrip,choiceDescrips, choiceLinks,items)
                 this.rooms.push(room);
