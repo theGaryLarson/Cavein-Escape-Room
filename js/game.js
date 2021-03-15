@@ -173,9 +173,8 @@ class Game {
                     console.log("key is being used.")
                 }
                 //add the key to our room
-                item0 = new Item("golden key", "/img/key.png", null, "A shiny key.");
+                item0 = new Item("golden key", "img/key.png", null, "A shiny key.");
                 room.isExamined = false;
-                item1 = new Item("chalice","img/lint.png", null, "A worn but valuable looking goblet.")
                 var items = [item0, item1];
                 room = new Room(roomTitle, roomDescrip,choiceDescrips, choiceLinks,items)
                 this.rooms.push(room);
@@ -245,7 +244,7 @@ class Game {
                 choiceLinks = [linkChoice0, linkChoice1, linkChoice2, linkChoice3]
 				
 				//here we will create a rope to swap into our player inventory when click choice1
-				item0 = new Item("rope", "/img/rope.png", null, "The means of your escape.");
+				item0 = new Item("rope", "img/rope.png", null, "The means of your escape.");
 				items=[item0];
                 room = new Room(roomTitle, roomDescrip,choiceDescrips, choiceLinks,items)
                 this.rooms.push(room);
@@ -284,6 +283,30 @@ class Game {
                 // You Died
                 roomTitle = "You Died"//will need unique titles
                 roomDescrip = "Alas, you took one wrong turn to many and didn't make it"
+                //TODO: fill in the rest of the descriptions.
+                choiceDescrip0 = "Return to title screen";
+                choiceDescrip1 = "Play again";
+                choiceDescrip2 = "Give it another go";
+                choiceDescrip3 = "Restart";
+                choiceDescrips = [ choiceDescrip0, choiceDescrip1, choiceDescrip2, choiceDescrip3];
+                //TODO: Enter the index (change the number) in for the rooms this room connects too
+                linkChoice0 = "theGame.loadRoom(theGame.rooms[0].title)";
+                linkChoice1 = "theGame.loadRoom(theGame.rooms[0].title)";
+                linkChoice2 = "theGame.loadRoom(theGame.rooms[0].title)";
+                linkChoice3 = "theGame.loadRoom(theGame.rooms[0].title)";
+                choiceLinks = [linkChoice0, linkChoice1, linkChoice2, linkChoice3]
+				
+				//here we will create a rope to swap into our player inventory when click choice1
+                room = new Room(roomTitle, roomDescrip,choiceDescrips, choiceLinks)
+                this.rooms.push(room);
+				
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+				
+				// idx 9 (Gary)
+                // You Have Escaped!
+                roomTitle = "You Have Escaped!"//will need unique titles
+                roomDescrip = "You climb the rope. Your friends reaching out and pulling you up. Congratulations you have escaped the underground ruins!"
                 //TODO: fill in the rest of the descriptions.
                 choiceDescrip0 = "Return to title screen";
                 choiceDescrip1 = "Play again";
@@ -416,6 +439,14 @@ class Game {
             document.getElementById("item-" + delItem[0].title).remove();
             
         }
+	
+		//clear inventory on death or win
+		clearInventory(){
+			var itemsToClear = this.player.items.slice();
+			for(var i = 0; i < itemsToClear.length; i++){
+				this.deleteItem(this.player,itemsToClear[i]);
+			}
+		}
         //leave item in x from inventory
         leaveItem(Giver, Receiver, itemTitle){
             var itmIdx = theGame.itemIndex(itemTitle,Giver.items);

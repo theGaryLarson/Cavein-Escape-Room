@@ -12,6 +12,9 @@
             if (btn) {
                 //methods for interacting with button clicks goes here
                 console.log(`You clicked ${btn.innerHTML}`);
+				if(document.getElementById("roomTitle").innerHTML == "You Died"){
+				theGame.clearInventory();
+			}
             }
         const pic = e.target.closest("img");
         if(pic) {
@@ -35,7 +38,8 @@
                 document.getElementById('itemData').innerHTML = "You can't use that here."
             }
 			if(itemTitle[1]=="rope" && theGame.player.currentRoom.title == "Submerged Room"){
-				document.getElementById("roomDescrip").innerHTML="You begin to climb the rope to safety. Escaping from the ruins. <br><br><em>You wonder, I'm still going to have to work the rest of the day?</em>"
+				theGame.loadRoom('You Have Escaped!')
+				theGame.clearInventory();
 			}
             }//end if checking for pic
         });//end eventlistener
@@ -47,6 +51,7 @@
         //added this to ensure all elements are loaded on the page before we interact with them during testing.
         window.addEventListener('DOMContentLoaded', (event) => {
             theGame.loadRoom('Welcome');
+			
         
             
         });
