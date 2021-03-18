@@ -1,6 +1,5 @@
 class Player {
     constructor() {
-        this.hasKey = false;
         this.items = new Array();
         //room idx 0 should be setup as the starting room.
         this.currentRoom;
