@@ -1,5 +1,6 @@
 # Cavein-Escape-Room
-Final Project for NSC IT102 An Intro JavaScript Course [Demo](https://htmlpreview.github.io/?https://github.com/theGaryLarson/Cavein-Escape-Room/blob/main/index.html)
+Final Project for NSC IT102 An Intro JavaScript Course <br></br>
+ Check out the early version [Demo](https://htmlpreview.github.io/?https://github.com/theGaryLarson/Cavein-Escape-Room/blob/main/index.html) !
 <br></br>
 This is a web-based virtual "escape-room" style game. It includes interactive items leveraging JavaScript. I wrote the index.html, theme.css and all the .js files  except for highlight.js which I plan to use for an upcoming feature.
 <br></br>
